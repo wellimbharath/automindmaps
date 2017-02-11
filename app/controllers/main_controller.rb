@@ -94,31 +94,3 @@ class MainController < ApplicationController
     @map["content"]["#{i}"]["subt"].store("#{j}",@map["content"]["#{j}"])
     @map["content"].delete("#{j}")
   end
-
-=======
-require 'rake_text'
-require 'engtagger'
-class MainController < ApplicationController
-  def index
-    @tgr = EngTagger.new
-    @rake = RakeText.new
-    @text = params[:text]
-    @tagged = @tgr.add_tags(@text)
-    @proper = @tgr.get_proper_nouns(@tagged)
-    if @text != nil
-      @analyzed = @rake.analyse @text, RakeText.SMART
-    else
-      @analyzed = @rake.analyse "Hello world", RakeText.SMART
-    end
-    @analyzed = Hash[ @analyzed.sort_by { |data, key| key }.reverse ]
-    if @proper != nil
-      @proper.each do |pro_data,pro_key|
-        @proper_noun = pro_data
-        break
-      end
-    else
-      @proper_noun = "."
-    end
-  end
->>>>>>> 045577cecfbdc7bfb29cb17ba450d53a1b338867
-end
