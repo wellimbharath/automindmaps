@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require 'pdf/reader'
 require 'open-uri'
 class MainController < ApplicationController
