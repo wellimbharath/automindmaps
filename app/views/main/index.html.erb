@@ -1,0 +1,39 @@
+<<<<<<< HEAD
+<div class="left">
+<%= @info %>
+
+<% @arr_of_titles.each do |title| %>
+  <%= title[/\A */].size %>
+<% end %>
+<br/>
+
+<%= @map["0"] %>
+<br/>
+<% @map.each do |key, value| %>
+  <% if @map["content"].present? %>
+      <% count = 1 %>
+        <% @map["content"].each do  %>
+          <%= @map["content"]["#{count}"]%> <br/><br/>
+          <% count+=1 %>
+        <% end %>
+  <% end %>
+<% end %>
+</div>
+=======
+<h3>Enter the content here</h3>
+
+<%= form_tag("/", method: "get") do %>
+  <%= text_area_tag (:text) %>
+  <%= submit_tag("Submit") %>
+<% end %>
+<h1>Mind Map</h1>
+<ul class="mindmap">
+
+  <% @analyzed.each do |data,key| %>
+    <% if @proper_noun != data %>
+        <li><%=data %>, <br/><%=key.ceil%></li>
+    <% end %>
+<% end %>
+<li class="center"><%= @proper_noun %></li>
+</ul>
+>>>>>>> 045577cecfbdc7bfb29cb17ba450d53a1b338867
