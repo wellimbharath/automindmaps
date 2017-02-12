@@ -1,20 +1,24 @@
-<div class="left">
-<%= @info %>
-
-<% @arr_of_titles.each do |title| %>
-  <%= title[/\A */].size %>
-<% end %>
-<br/>
-
-<%= @map["0"] %>
-<br/>
-<% @map.each do |key, value| %>
-  <% if @map["content"].present? %>
-      <% count = 1 %>
-        <% @map["content"].each do  %>
-          <%= @map["content"]["#{count}"]%> <br/><br/>
-          <% count+=1 %>
-        <% end %>
+<pre><%=@titles%></pre>
+<%= @end_page_no %>
+<div class='map'>
+<% for i in (1..@count)%>
+  <% if @map["content"]["#{i}"].present? %>
+      <li class="section">
+        <%= @map["content"]["#{i}"]["title"].chop %>
+          <% if @map["content"]["#{i}"]["subt"].present? %>
+            <ul>
+              <% for j in (1..@count)%>
+                <% if @map["content"]["#{i}"]["subt"]["#{j}"].present? %>
+                  <li class="section">
+                    <%= @map["content"]["#{i}"]["subt"]["#{j}"]%>
+                  </li>
+                  <% else %>
+                  <% break %>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
+      </li>
   <% end %>
 <% end %>
 </div>
