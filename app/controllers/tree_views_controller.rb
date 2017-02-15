@@ -6,7 +6,7 @@ class TreeViewsController < ApplicationController
   # GET /tree_views
   # GET /tree_views.json
   def index
-    @tree_views = TreeView.all
+    @tree_views = current_user.tree_views.all
   end
 
   # GET /tree_views/1
@@ -24,7 +24,7 @@ class TreeViewsController < ApplicationController
 
   # GET /tree_views/new
   def new
-    @tree_view = TreeView.new
+    @tree_view = current_user.tree_views.new
   end
 
   # GET /tree_views/1/edit
@@ -34,7 +34,7 @@ class TreeViewsController < ApplicationController
   # POST /tree_views
   # POST /tree_views.json
   def create
-    @tree_view = TreeView.new(tree_view_params)
+    @tree_view = current_user.tree_views.new(tree_view_params)
     respond_to do |format|
       if @tree_view.save
         format.html { redirect_to @tree_view, notice: 'Tree view was successfully created.' }
@@ -78,6 +78,6 @@ class TreeViewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tree_view_params
-      params.require(:tree_view).permit(:link, :file)
+      params.require(:tree_view).permit(:link, :file, :user_id)
     end
 end

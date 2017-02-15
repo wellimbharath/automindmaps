@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :tree_views
   attr_accessor :name, :avatar
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -18,7 +19,7 @@ class User < ApplicationRecord
       user.avatar = auth.info.image # assuming the user model has an image
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
-      user.skip_confirmation!
+      user.save!
     end
   end
 

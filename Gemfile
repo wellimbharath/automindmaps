@@ -20,6 +20,7 @@ gem 'paperclip'
 gem 'devise'
 gem 'omniauth-facebook'
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'byebug', platform: :mri
 end
 gem 'rake_text'
