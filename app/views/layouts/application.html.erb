@@ -7,10 +7,30 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+
+    <% if controller_name != "home" && user_signed_in? %>
+
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Automapper</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+              <li>  <a class="nav-link active" href="#"><%= current_user.name %></a></li>
+              <li>  <a class="nav-link" href="/logout">Sign Out</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <% end %>
+
     <%= yield %>
+
     <script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
     <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
