@@ -3,25 +3,3 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-agent: *
 # Disallow: /
-<div class='map'>
-<% for i in (1..@count)%>
-  <% if @map["content"]["#{i}"].present? %>
-      <li class="section">
-        <%= @map["content"]["#{i}"]["title"] %>
-          <% if @map["content"]["#{i}"]["subt"].present? %>
-            <ul>
-              <% for j in (1..@count)%>
-                <% if @map["content"]["#{i}"]["subt"]["#{j}"].present? %>
-                  <li class="section">
-                    <%= @map["content"]["#{i}"]["subt"]["#{j}"]%>
-                  </li>
-                  <% else %>
-                  <% break %>
-                <% end %>
-              <% end %>
-            </ul>
-          <% end %>
-      </li>
-  <% end %>
-<% end %>
-</div>

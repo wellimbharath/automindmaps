@@ -1,5 +1,9 @@
 var c = document.getElementById("canv");
+<<<<<<< HEAD
 var cont = c.getContext("2d");
+=======
+var $ = c.getContext("2d");
+>>>>>>> 1f02049e83f6cffefc8d55c885d1e213e7a683a1
 c.width = window.innerWidth;
 c.height = window.innerHeight;
 
@@ -36,8 +40,13 @@ function nPart() {
 var pull = .03;
 
 function draw() {
+<<<<<<< HEAD
  cont.fillStyle = '#6937e2';
  cont.fillRect(0, 0, c.width, c.height);
+=======
+ $.fillStyle = '#6937e2';
+ $.fillRect(0, 0, c.width, c.height);
+>>>>>>> 1f02049e83f6cffefc8d55c885d1e213e7a683a1
   dst.ref();
   var pos = dst.pos;
   var i = dst.parr.length;
@@ -68,6 +77,7 @@ function addP(px, py) {
 }
 
 function conn(p1, p2) {
+<<<<<<< HEAD
   cont.strokeStyle = '#FFFFFF';
   var dist = _dist(p1, p2);
   cont.globalAlpha = 1 - dist / 100;
@@ -75,6 +85,15 @@ function conn(p1, p2) {
   cont.moveTo(p1.x, p1.y);
   cont.lineTo(p2.x, p2.y);
   cont.stroke();
+=======
+  $.strokeStyle = '#FFFFFF';
+  var dist = _dist(p1, p2);
+  $.globalAlpha = 1 - dist / 100;
+  $.beginPath();
+  $.moveTo(p1.x, p1.y);
+  $.lineTo(p2.x, p2.y);
+  $.stroke();
+>>>>>>> 1f02049e83f6cffefc8d55c885d1e213e7a683a1
 }
 
 function _dist(p1, p2) {

@@ -13,5 +13,8 @@
 !/log/.keep
 !/tmp/.keep
 
+#Ignore public system files
+/public/system
+
 # Ignore Byebug command history file.
 .byebug_history
