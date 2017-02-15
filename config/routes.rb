@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,  controllers: { omniauth_callbacks: "users/omniauth_callbacks", session: 'users/sessions', registration: 'users/registrations' }
+
   resources :tree_views
   root to: 'home#index'
   resources :main

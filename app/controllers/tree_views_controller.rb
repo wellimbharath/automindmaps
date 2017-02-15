@@ -1,5 +1,6 @@
 require 'open-uri'
 class TreeViewsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_tree_view, only: [:show, :edit, :update, :destroy]
 
   # GET /tree_views
