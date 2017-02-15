@@ -17,6 +17,8 @@ gem 'bootstrap'
 gem 'rubytree'
 gem 'visjs-rails'
 gem 'paperclip'
+gem 'devise'
+gem 'omniauth-facebook'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

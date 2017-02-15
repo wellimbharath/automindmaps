@@ -8,16 +8,18 @@
            <nav class="nav nav-masthead">
              <a class="nav-link active" href="#">Home</a>
              <a class="nav-link" href="#">Features</a>
-             <a class="nav-link" href="#">Contact</a>
+
+             <% if user.signed_in? %>
+             <a class="nav-link" href="#">Sign In</a>
            </nav>
          </div>
        </div>
 
        <div class="inner cover">
-         <h1 class="cover-heading">Automapper is a self mind mapping tool</h1>
-         <p class="lead">Automapper is a mind map engine which will create mind maps for you based on the content you provide with the help of advanced machine learning, deep learning and natural language processing techniques .</p>
+         <h1 class="cover-heading">Automapper, an auto mind mapping tool</h1>
+         <p class="lead">Automapper is a mind map engine which will create mind maps based on the content with the help of advanced machine learning, deep learning and natural language processing techniques .</p>
          <p class="lead">
-           <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+           <a href="/tree_views" class="btn btn-lg btn-secondary">Give a try</a>
          </p>
        </div>
    </div>
