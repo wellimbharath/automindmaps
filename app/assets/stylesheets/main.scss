@@ -1,0 +1,45 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+    #mynetwork {
+      width: 600px;
+      height: 400px;
+      border: 1px solid lightgray;
+    }
+
+    	.node {
+        cursor: pointer;
+      }
+
+      .overlay{
+          background-color:#EEE;
+      }
+
+      .node circle {
+        fill: #fff;
+        stroke: steelblue;
+        stroke-width: 1.5px;
+      }
+
+      .node text {
+        font-size:13px;
+        margin:10px;
+        font-family:sans-serif;
+      }
+
+      .link {
+        fill: none;
+        stroke: #ccc;
+        stroke-width: 1.5px;
+      }
+
+      .templink {
+        fill: none;
+        stroke: red;
+        stroke-width: 3px;
+      }
+
+      .ghostCircle.show{
+          display:block;
+      }

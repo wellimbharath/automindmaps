@@ -1,0 +1,1 @@
+json.partial! "tree_views/tree_view", tree_view: @tree_view

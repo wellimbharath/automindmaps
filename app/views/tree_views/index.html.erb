@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tree Views</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tree_views.each do |tree_view| %>
+      <tr>
+        <td><%= tree_view.link %></td>
+        <td><%= link_to 'Show', tree_view %></td>
+        <td><%= link_to 'Edit', edit_tree_view_path(tree_view) %></td>
+        <td><%= link_to 'Destroy', tree_view, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tree View', new_tree_view_path %>

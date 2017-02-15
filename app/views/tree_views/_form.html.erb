@@ -1,0 +1,23 @@
+<%= form_for(tree_view, html: { multipart: true } )do |f| %>
+  <% if tree_view.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tree_view.errors.count, "error") %> prohibited this tree_view from being saved:</h2>
+
+      <ul>
+      <% tree_view.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+
+  <%= f.file_field :file %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

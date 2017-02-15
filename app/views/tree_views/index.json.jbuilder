@@ -1,0 +1,1 @@
+json.array! @tree_views, partial: 'tree_views/tree_view', as: :tree_view

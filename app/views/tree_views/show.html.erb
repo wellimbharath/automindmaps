@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @tree_view.link %>
+  <div id="tree" class="tree">
+  </div>
+</p>
+
+<%= link_to 'Edit', edit_tree_view_path(@tree_view) %> |
+<%= link_to 'Back', tree_views_path %>

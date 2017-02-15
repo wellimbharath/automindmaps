@@ -1,0 +1,23 @@
+<div class='map' id="map">
+<% for i in (1..@count)%>
+  <% if @map["content"]["#{i}"].present? %>
+      <li class="section">
+        <%= @map["content"]["#{i}"]["title"]%>
+          <% if @map["content"]["#{i}"]["children"].present? %>
+            <ul>
+              <% for j in (1..@count)%>
+                <% if @map["content"]["#{i}"]["children"]["#{j}"].present? %>
+                  <li class="section">
+                    <%= @map["content"]["#{i}"]["children"]["#{j}"]%>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
+      </li>
+  <% end %>
+<% end %>
+</div>
+<script>
+document.getElementById("map").style.height = window.innerHeight - 60 + "px" ;
+</script>
