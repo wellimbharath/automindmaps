@@ -22,7 +22,6 @@ gem 'omniauth-facebook'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
-gem 'active_pdftk', :git => 'git@github.com:koenhandekyn/active_pdftk.git'
 gem 'rake_text'
 gem 'engtagger'
 gem 'pdf-reader'
